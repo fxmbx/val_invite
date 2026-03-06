@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Be My Valentine?</title>
+    <title>I'm Sorry 💕</title>
     <style>
       body {
         display: flex;
@@ -11,15 +11,33 @@
         align-items: center;
         justify-content: center;
         height: 100vh;
-        background-color: #ffebee;
+        background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
         font-family: "Arial", sans-serif;
         overflow: hidden;
         text-align: center;
         position: relative;
       }
       h1 {
-        color: #d32f2f;
+        color: #ffffff;
         font-size: 3rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        position: relative;
+      }
+      .translation {
+        display: none;
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin-top: 10px;
+      }
+      @media (min-width: 769px) {
+        h1:hover .translation {
+          display: block;
+        }
+      }
+      @media (max-width: 768px) {
+        .translation {
+          display: block;
+        }
       }
       img {
         max-width: 90%;
@@ -62,20 +80,23 @@
         transition: 0.3s;
       }
       #yes-btn {
-        background-color: #4caf50;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
         margin-right: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       }
       #yes-btn:hover {
         transform: scale(1.2);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
       }
       #no-btn {
-        background-color: #f44336;
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
         color: white;
         position: fixed;
         transition:
           left 0.2s,
           top 0.2s;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       }
       #celebration {
         display: none;
@@ -91,11 +112,11 @@
         align-items: center;
       }
       .invitation {
-        background: #d32f2f;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white;
         padding: 30px;
         border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         animation: popIn 0.5s ease-out;
       }
       @keyframes popIn {
@@ -115,7 +136,18 @@
         alt="heart"
         style="width: 200px; border-radius: 10px; margin-bottom: 20px"
       />
-      <h1>Will you be my Valentine? ❤️</h1>
+      <h1>
+        Je suis désolée pour hier mon amour 🥺
+        <span class="translation">(I'm sorry about yesterday my love)</span>
+      </h1>
+      <h2 style="color: white; margin-top: 20px; font-size: 1.5rem">
+        Please forgive your sometimes lazy baby? 👉👈
+        <span
+          class="translation"
+          style="font-size: 0.9rem; display: block; margin-top: 5px"
+          >(Veuillez pardonner à votre bébé paresseux?)</span
+        >
+      </h2>
       <div class="btn-container">
         <button id="yes-btn" onclick="celebrate()">YES!</button>
         <button
@@ -135,16 +167,16 @@
         alt="celebration"
         style="width: 300px; margin-bottom: 20px"
       />
-      <h1 style="font-size: 5rem">✨ YAY! ✨</h1>
+      <h1 style="font-size: 5rem">✨ Thank you! ✨</h1>
       <div class="invitation">
-        <h2>
-          You're invited for an experience of a life time at the castle of love
-          💕
-        </h2>
-        <p><strong>Date:</strong> This Saturday February 14, 2026</p>
-        <p><strong>Time:</strong> ☀️ - ♾️</p>
-        <p>get ready for an experience like no other ❤️❤️❤️!</p>
-        <p style="font-size: 0.9rem; margin-top: 20px">!</p>
+        <h2>Its Friday!!! which means ... date night! 💕</h2>
+        <p><strong>Where:</strong> Our special spot 🌟</p>
+        <p><strong>When:</strong> Today (after work)</p>
+        <p>
+          <strong>What:</strong> An evening of food, gist and beautiful
+          memories... just us two ❤️
+        </p>
+        <p>💖</p>
       </div>
     </div>
 
@@ -198,7 +230,7 @@
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
-                message: "Someone accepted your Valentine invite! 💕",
+                message: "She forgave you! Date night at Landmark is on! 💕",
               }),
             });
           }
